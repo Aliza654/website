@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Doll Collection</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #ffeef5;
+            text-align: center;
+        }
+
+        h1 {
+            color: #d63384;
+        }
+
+        .doll-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            width: 200px;
+            box-shadow: 0px 0px 10px gray;
+        }
+
+        img {
+            width: 100%;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>?? My Doll Collection</h1>
+
+<div class="doll-container">
+
+    {% for doll in dolls %}
+    <div class="card">
+        <img src="{{ doll.image }}" alt="doll">
+        <h3>{{ doll.name }}</h3>
+        <p>{{ doll.description }}</p>
+    </div>
+    {% endfor %}
+
+</div>
+
+</body>
+</html>
